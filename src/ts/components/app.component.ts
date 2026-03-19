@@ -14,7 +14,8 @@ import { FontService } from '../services/font.service';
 
 			<article id="content"
 				 class="loading col-xs-12 col-sm-12 col-md-12 col-lg-pull-0"
-				 [ngClass]="{ 'loading': loading.is(), 'col-lg-8': songList.isOpen() }"
+				 [class.loading]="loading.is()"
+				 [class.col-lg-8]="songList.isOpen()"
 			>
 				<router-outlet></router-outlet>
 				<!--<ui-view></ui-view>-->
@@ -34,10 +35,12 @@ import { FontService } from '../services/font.service';
 	<header class="navbar navbar-default" [class.songlist-open]="songList.isOpen()">
 		<div class="container-fluid">
 			<div class="navbar-header">
+				<!--
 				<ul class="nav navbar-nav pull-right">
 					<li class="font-ctrl"><a class="font-decr-btn" (click)="font.decreaseFont()">A-</a></li>
 					<li class="font-ctrl"><a class="font-incr-btn" (click)="font.increaseFont()">A+</a></li>
 				</ul>
+				-->
 				<a
 					class="navbar-brand"
 					style="user-select:none"

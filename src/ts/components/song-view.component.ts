@@ -4,6 +4,7 @@ import { SongListService } from '../services/song-list.service';
 import { CurrentSongService } from '../services/current-song.service';
 import { LoadingService } from '../services/loading.service';
 import { FontService } from '../services/font.service';
+import { Subscription } from 'rxjs';
 
 let hammertime;
 
@@ -13,7 +14,7 @@ let hammertime;
 	<pre
 		class="alert alert-danger"
 		style="display:inline-block;margin-top:1em;"
-       		*ngIf="error">{{ error.message }} &#x2639;</pre>
+       		*ngIf="error">{{ error?.message || error?.toString?.() || 'Virhe laulun lataamisessa' }} &#x2639;</pre>
 
 	<pre
 		*ngIf="$song"
@@ -40,6 +41,9 @@ let hammertime;
 			word-break: normal;
 		}
 		
+		:host ::ng-deep #song-body article > header {
+			padding: 0px 1em;
+		}
 		:host ::ng-deep #song-body section {
 			text-align: left;
 			padding: 0px 1em;	
@@ -51,7 +55,7 @@ export class SongViewComponent implements OnInit {
 	error?: Error;
 	$song;
 
-	subscription;
+	subscription?: Subscription;
 
 	constructor(
 		public currentSong: CurrentSongService,
@@ -75,7 +79,7 @@ export class SongViewComponent implements OnInit {
 	}
 
 	ngOnDestroy() {
-		this.subscription.unsubscribe();
+		if (this.subscription) this.subscription.unsubscribe();
 	}
 
 	public setSongKey( songKey: string ) {
@@ -125,7 +129,7 @@ export class SongViewComponent implements OnInit {
 
 		this.currentSong.fixedSize = true;
 
-		let hammertime = iniHammer();
+		let hammertime = initHammer();
 
 		if (hammertime) hammertime.on( 'tap', event => {
 			this.fontService.toggleFont();
@@ -135,7 +139,7 @@ export class SongViewComponent implements OnInit {
 	}
 }
 
-function iniHammer() {
+function initHammer() {
 			
 	let hammertime;
 
