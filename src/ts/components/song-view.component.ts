@@ -19,7 +19,7 @@ let hammertime;
 		*ngIf="$song"
 		[innerHtml]="$song.lyrics"
 		id="song-body"
-		[ngStyle]="{ 'font-size.em' : (fontService.size / 10.0) }"
+		[style.font-size.em]="fontService.size / 10.0"
 		[class.fixed-size]="currentSong.fixedSize"
 	></pre>`,
 	styles: [
@@ -29,19 +29,20 @@ let hammertime;
 			border: none;
 			color: #000;
 			font-size: 1.2em;
-			padding: 1rem 2rem;
+			padding: 1rem 0px;
 			display: inline-block;
 		}`,
 		`:host ::ng-deep #song-body.fixed-size .fixed-size {
 			line-height: 2em;
 			font-size: 1.8rem !important;
-			width: 100%;
+			max-width: 100vw;
 			white-space: pre-wrap;
 			word-break: normal;
 		}
 		
 		:host ::ng-deep #song-body section {
 			text-align: left;
+			padding: 0px 1em;	
 		}`
 	]
 })
