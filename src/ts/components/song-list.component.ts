@@ -1,5 +1,5 @@
 
-import { OnInit, ChangeDetectorRef, Component, Input, Inject } from '@angular/core';
+import { OnInit, AfterViewInit, ChangeDetectorRef, Component, Input, Inject, ViewChild, ElementRef } from '@angular/core';
 import { Song } from '../classes/Song';
 import { LoadingService       } from '../services/loading.service';
 import { SongsService         } from '../services/songs.service';
@@ -9,13 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'song-list',
-	template: 
-	`<div id="search">
+	template: `
+	<div id="search">
 		<input
+			#searchInput
 			type="text"
 			class="form-control"
 			style="user-select:none"
-			placeholder="Hae..." [(ngModel)]="search"
+			placeholder="Hae..."
+			[(ngModel)]="search"
 			(ngModelChange)="runFilter()"
 		>
 
@@ -27,7 +29,7 @@ import { ActivatedRoute } from '@angular/router';
 			class="list-group-item"
 			style="user-select:none"
 			*ngFor="let song of getSongs()"
-			[ngClass]="{ 'active': currentSongKey == song.key }"
+			[class.active]="currentSongKey == song.key"
 		>
 			<a style="cursor:pointer" (click)="select(song.key)">
 				<h4 class="title"><b class="number">{{ song.num }}</b> &ndash; {{ song.title }}</h4>
@@ -61,7 +63,9 @@ import { ActivatedRoute } from '@angular/router';
 		}`
 	]
 })
-export class SongListComponent implements OnInit {
+export class SongListComponent implements OnInit, AfterViewInit {
+
+	@ViewChild('searchInput') searchInput!: ElementRef;
 
 	search: string = "";
 
@@ -83,6 +87,12 @@ export class SongListComponent implements OnInit {
 	) {}
 
 	ngOnInit() { }
+
+	ngAfterViewInit() {
+		if (this.searchInput) {
+			this.searchInput.nativeElement.focus();
+		}
+	}
 
 	select( songKey: string ) {
 		if (!this.currentSong.current || this.currentSong.current.key != songKey) {
