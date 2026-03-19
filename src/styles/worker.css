@@ -222,7 +222,7 @@ app-root > header a.navbar-brand:hover {
 	padding: 14px;
 }
 
-#song-body {
+/* #song-body {
     line-height: 2em;
     background-color: transparent;
     border: none;
@@ -230,7 +230,7 @@ app-root > header a.navbar-brand:hover {
     font-size: 1.2em;
     padding: 1rem 2rem;
     display: inline-block;
-}
+} */
 /** Laulut */
 
 #song-body h1 { font-size: 2.00em; }
