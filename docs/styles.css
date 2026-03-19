@@ -155,7 +155,7 @@ app-root > header a.navbar-brand:hover {
 	font-size: 2em;
 	text-decoration: none;
 	padding: 14px;
-}#song-body {
+}/* #song-body {
     line-height: 2em;
     background-color: transparent;
     border: none;
@@ -163,7 +163,7 @@ app-root > header a.navbar-brand:hover {
     font-size: 1.2em;
     padding: 1rem 2rem;
     display: inline-block;
-}/** Laulut */#song-body h1 { font-size: 2.00em; }#song-body h2 { font-size: 1.50em; }#song-body h3 { font-size: 1.17em; }#song-body h4 { font-size: 1.00em; }#song-body h5 { font-size: 0.83em; }#song-body h6 { font-size: 0.67em; }#song-body article > header {
+} *//** Laulut */#song-body h1 { font-size: 2.00em; }#song-body h2 { font-size: 1.50em; }#song-body h3 { font-size: 1.17em; }#song-body h4 { font-size: 1.00em; }#song-body h5 { font-size: 0.83em; }#song-body h6 { font-size: 0.67em; }#song-body article > header {
 	margin-bottom: 2rem;
 }#song-body header > h1 {
 	font-size: 2rem !important;

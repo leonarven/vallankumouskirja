@@ -21,6 +21,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      * (c) 2010-2022 Google LLC. https://angular.io/
      * License: MIT
      */
+
     /**
      * @license
      * Copyright Google LLC All Rights Reserved.
@@ -28,6 +29,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
+
     (function (global) {
       var performance = global['performance'];
       function mark(name) {
@@ -701,7 +703,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       performanceMeasure('Zone', 'Zone');
       return global['Zone'] = Zone;
     })(typeof window !== 'undefined' && window || typeof self !== 'undefined' && self || global);
-
     /**
      * @license
      * Copyright Google LLC All Rights Reserved.
@@ -1023,7 +1024,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       } catch (error) {}
       return ieOrEdge;
     }
-
     /**
      * @license
      * Copyright Google LLC All Rights Reserved.
@@ -1031,6 +1031,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
+
     Zone.__load_patch('ZoneAwarePromise', function (global, Zone, api) {
       var ObjectGetOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
       var ObjectDefineProperty = Object.defineProperty;
@@ -1539,7 +1540,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       Promise[Zone.__symbol__('uncaughtPromiseErrors')] = _uncaughtPromiseErrors;
       return ZoneAwarePromise;
     });
-
     /**
      * @license
      * Copyright Google LLC All Rights Reserved.
@@ -1588,7 +1588,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         return originalObjectToString.call(this);
       };
     });
-
     /**
      * @license
      * Copyright Google LLC All Rights Reserved.
@@ -1596,6 +1595,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
+
     var passiveSupported = false;
     if (typeof window !== 'undefined') {
       try {
@@ -2096,7 +2096,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         });
       }
     }
-
     /**
      * @license
      * Copyright Google LLC All Rights Reserved.
@@ -2104,6 +2103,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
+
     function patchCallbacks(api, target, targetName, method, callbacks) {
       var symbol = Zone.__symbol__(method);
       if (target[symbol]) {
@@ -2134,7 +2134,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       };
       api.attachOriginToPatched(target[method], nativeDelegate);
     }
-
     /**
      * @license
      * Copyright Google LLC All Rights Reserved.
@@ -2142,6 +2141,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
+
     function filterProperties(target, onProperties, ignoreProperties) {
       if (!ignoreProperties || ignoreProperties.length === 0) {
         return onProperties;
@@ -2195,7 +2195,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         target && target.prototype && patchFilteredProperties(target.prototype, getOnEventNames(target.prototype), ignoreProperties);
       }
     }
-
     /**
      * @license
      * Copyright Google LLC All Rights Reserved.
@@ -2203,6 +2202,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
+
     Zone.__load_patch('util', function (global, Zone, api) {
       var eventNames = getOnEventNames(global);
       api.patchOnProperties = patchOnProperties;
@@ -2246,7 +2246,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         };
       };
     });
-
     /**
      * @license
      * Copyright Google LLC All Rights Reserved.
@@ -2254,6 +2253,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
+
     var taskSymbol = zoneSymbol('zoneTask');
     function patchTimer(window, setName, cancelName, nameSuffix) {
       var setNative = null;
@@ -2344,7 +2344,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         };
       });
     }
-
     /**
      * @license
      * Copyright Google LLC All Rights Reserved.
@@ -2352,6 +2351,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
+
     function patchCustomElements(_global, api) {
       var _api$getGlobalObjects = api.getGlobalObjects(),
         isBrowser = _api$getGlobalObjects.isBrowser,
@@ -2362,7 +2362,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       var callbacks = ['connectedCallback', 'disconnectedCallback', 'adoptedCallback', 'attributeChangedCallback'];
       api.patchCallbacks(api, _global.customElements, 'customElements', 'define', callbacks);
     }
-
     /**
      * @license
      * Copyright Google LLC All Rights Reserved.
@@ -2370,6 +2369,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
+
     function eventTargetPatch(_global, api) {
       if (Zone[api.symbol('patchEventTarget')]) {
         return;
@@ -2400,7 +2400,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     function patchEvent(global, api) {
       api.patchEventPrototype(global, api);
     }
-
     /**
      * @license
      * Copyright Google LLC All Rights Reserved.
@@ -2408,6 +2407,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
+
     Zone.__load_patch('legacy', function (global) {
       var legacyPatch = global[Zone.__symbol__('legacyPatch')];
       if (legacyPatch) {
