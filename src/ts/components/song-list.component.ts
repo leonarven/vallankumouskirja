@@ -52,8 +52,8 @@ import { ActivatedRoute } from '@angular/router';
 			<p>Laulukirjaa kehitetään, joten l&auml;het&auml; palautetta <a href="mailto:palaute@vallankumouslaulukirja.fi">sähköpostitse</a> tai <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSdwoZsppuBa2C6ELUPCvE40Wq--JSoNwOtoNYunDE9z0eeA_A/viewform">lomakkeella</a>, mikäli havaitset jotain huomautettavaa.</p>
 		</li>
 	</ul>`,
-	styles: [
-		`.list-group-item.footer,
+	styles: [`
+		.list-group-item.footer,
 		.list-group-item.notice,
 		.list-group-item.no-results {
 			margin: 10px 0px;
