@@ -32,7 +32,7 @@ import { ActivatedRoute } from '@angular/router';
 			[class.active]="currentSongKey == song.key"
 		>
 			<a style="cursor:pointer" (click)="select(song.key)">
-				<h4 class="title"><b class="number">{{ song.num }}</b> &ndash; {{ song.title }}</h4>
+				<h4 class="title"><b class="number">{{ song.num }}.</b>&nbsp;{{ song.title }}</h4>
 			</a>
 		</li>
 

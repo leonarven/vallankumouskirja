@@ -120,6 +120,8 @@ export class SongsService {
 
 		this.sorted.sort(( a: ISongJson, b: ISongJson ) => ((a.num||0) - (b.num||0)));
 
+		console.log( this.sorted)
+
 		return this.index;
 	}
 
