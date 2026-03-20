@@ -93,7 +93,8 @@
 					},
 					"configurations": {
 						"production": {
-							"optimization": true
+							"optimization": true,
+							"outputHashing": "all"
 						},
 						"development": {
 							"buildOptimizer": false,
