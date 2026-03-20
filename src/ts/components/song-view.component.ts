@@ -45,10 +45,6 @@ let hammertime;
 			padding: 0px 1em;
 			overflow-wrap: break-word;
 		}
-		:host ::ng-deep #song-body article > header > h1,
-		:host ::ng-deep #song-body article > header > h2 {
-			display: inline-block;
-		}
 		:host ::ng-deep #song-body section {
 			text-align: left;
 			padding: 0px 1em;	
